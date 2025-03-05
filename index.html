@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sriya's Certificate gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.jpg">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">Sriya N</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-text active">Home</a>
+                <a href="about.html" class="nav-text">About Me</a>
+                <a href="certificates.html" class="nav-text">All certificates</a>
+            </div>
+        </nav>
+
+        <div class="canvas-container"></div>
+
+        <div class="navigation-hints">
+            <div class="hint">
+                <span class="key">←</span>
+                <span class="key">→</span>
+                Use arrow keys to navigate
+            </div>
+            <div class="hint">
+                Or scroll to move through certificates
+            </div>
+        </div>
+
+        <div class="progress-indicator">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Load Three.js first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+    <!-- Load your script -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

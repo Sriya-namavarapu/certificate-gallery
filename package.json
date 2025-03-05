@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "vite": "^6.1.1"
+  }
+}

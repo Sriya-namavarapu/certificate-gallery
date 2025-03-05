@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+   
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-text {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-text:hover {
+    opacity: 1;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-text.active {
+    opacity: 1;
+    position: relative;
+}
+
+.nav-text.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+}
+
+.canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+}
+
+.navigation-hints {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.hint {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.key {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.progress-indicator {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: #fff;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Add subtle gradient background */
+.container::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-text {
+        font-size: 0.8rem;
+    }
+
+    .navigation-hints {
+        bottom: 1rem;
+    }
+}
+
+html, body {
+    width: 100%;
+    height: 500vh; /* Reduced from 1000vh for better control */
+    font-family: "Inter";
+    background-color: #000; /* Black background */
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.5;
+}
+
+p#logo {
+    opacity: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Mobile Styles */
+@media (max-width: 576px) {
+    .slider-wrapper {
+        max-width: 100%;       /* Ensure container takes up full width */
+    }
+
+    .slider img {
+        width: 100%;           /* Ensure images take full width of the container */
+        height: auto;          /* Maintain aspect ratio */
+    }
+}
+
+.slider-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure proper scaling */
+}
+
+.overlay {
+    display: none; /* Remove the overlay completely */
+}
+
+/* Page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling during loading */
+    background-color: black; /* Page background */
+  }
+  
+  /* Solid black overlay */
+  #loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Solid black screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 1000;
+  }
+  
+  /* Loader - White Spinner */
+  .loader {
+    width: 40px;
+    aspect-ratio: 0.577;
+    clip-path: polygon(0 0, 100% 100%, 0 100%, 100% 0); /* Triangle shape */
+    position: relative;
+    animation: l19 1s infinite linear; /* Spin faster */
+    overflow: hidden;
+    border: 2px solid white;
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    inset: -150% -150%;
+    background: repeating-conic-gradient(from 30deg, #fff 0 60deg, #fff 0 90deg, #fff 0 120deg, #fff 0 150deg, #fff 0 180deg); /* White and black gradient */
+    animation: inherit;
+    animation-direction: reverse;
+  }
+  
+  /* Faster spin with pause at 180deg */
+  @keyframes l19 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg); /* Complete the rotation */
+    }
+  }
+  
