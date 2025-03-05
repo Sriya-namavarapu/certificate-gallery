@@ -1,5 +1,3 @@
-// Remove the Three.js import since we're using CDN
-// import * as THREE from 'three';
 
 class CertificateSlider {
     constructor() {
